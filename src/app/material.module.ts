@@ -17,9 +17,30 @@ import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
-
+  imports: [
+    MatButtonModule,
+    MatCheckboxModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatSidenavModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatSliderModule
+  ],
   exports: [
     MatButtonModule,
     MatCheckboxModule,
@@ -38,7 +59,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSliderModule
   ]
 })
 export class MaterialModule { }

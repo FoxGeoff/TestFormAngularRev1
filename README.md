@@ -14,3 +14,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 4. Add: to app.module '@angular/forms' and imports: FormsModule (for template style form and ```[(ngModel)]```)
 
 ### Task: Add Material module
+
+## NOTE in material module use import: [], export: []
+
+1. This is a fix if the components are not displaying
+
+### Task: Add Angular flex layout
+
+1. ref <https://github.com/angular/flex-layout>
+2. run ```npm i -s @angular/flex-layout @angular/cdk```
+3. add to app.module ```import { FlexLayoutModule } from '@angular/flex-layout';``
+4. Restart server

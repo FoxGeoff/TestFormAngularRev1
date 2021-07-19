@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TestFormAngularRev1';
+  firstName = 'Ex First Name';
+
+  constructor() {
+
+  }
 }
