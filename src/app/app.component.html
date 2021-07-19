@@ -1,46 +1,45 @@
-<div class="container" style="margin: 10px">
-  <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
-
+<div class="container" style="margin: 16px">
   <h4>User Form</h4>
   <div class="example-form">
     <!-- user form -->
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="standard">
       <mat-label>First Name</mat-label>
-      <input
-        matInput
-        [(ngModel)]="firstName"
-        name="firstName"
-        placeholder="first name..."
-      />
+      <input matInput [(ngModel)]="firstName" name="firstName" />
     </mat-form-field>
   </div>
   <div>
-    <label>Last Name</label>
-    <input type="text" id="lastName" />
+    <mat-form-field appearance="standard">
+      <mat-label>Last Name</mat-label>
+      <input matInput [(ngModel)]="lastName" name="lastName" />
+    </mat-form-field>
   </div>
   <div>
-    <label>E-Mail</label>
-    <input type="text" id="email" />
+    <mat-form-field appearance="standard">
+      <mat-label>E-Mail</mat-label>
+      <input matInput type="email" [(ngModel)]="email" name="email" />
+    </mat-form-field>
   </div>
-  <div>
-    <button>Save</button>
-    <button>Cancel</button>
+  <div class="row" fxLayoutGap="10px" fxLayoutAlign="start">
+    <button mat-raised-button color="accent" (click)="onSave()">Save</button>
+    <button mat-raised-button color="primary" (click)="onCancel()">
+      Cancel
+    </button>
   </div>
-</div>
-<!-- table of all users -->
-<h4>List of user details</h4>
-<table>
-  <tr>
-    <th><input type="checkbox" /></th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>E-mail</th>
-  </tr>
-  <tr>
-    <th><input type="checkbox" /></th>
-    <td>Joe</td>
-    <td>Blow</td>
-    <td>joe@computer.com</td>
-  </tr>
-</table>
 
+  <!-- table of all users -->
+  <h4>List of user details</h4>
+  <table>
+    <tr>
+      <th><input type="checkbox" /></th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>E-mail</th>
+    </tr>
+    <tr>
+      <th><input type="checkbox" /></th>
+      <td>Joe</td>
+      <td>Blow</td>
+      <td>joe@computer.com</td>
+    </tr>
+  </table>
+</div>

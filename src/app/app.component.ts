@@ -7,9 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TestFormAngularRev1';
-  firstName = 'Ex First Name';
+  firstName!: string;
+  lastName!: string;
+  email!:string;
 
   constructor() {
 
+  }
+
+  onSave() {
+
+  }
+
+  onCancel() {
+    
   }
 }
