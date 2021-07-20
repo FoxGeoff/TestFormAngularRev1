@@ -9,7 +9,8 @@ const USER_DATA: User[] = [
   { firstName: 'joanna', lastName: 'fox', email: 'jo@computer.com' }
 ]
 
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatTable } from '@angular/material/table';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,17 +25,27 @@ export class AppComponent {
   // Mat Table properties
   displayedColumns: string[] = ['firstName', 'lastName', 'email'];
   dataSource = USER_DATA;
+  @ViewChild(MatTable, { static: true }) table: MatTable<any>;
 
-  constructor() {
-
-  }
+  constructor() { }
 
   onSave() {
+    this.dataSource.push({
+      firstName: this.newFirstName,
+      lastName: this.newLastName,
+      email: this.newEmail
+    });
 
+    //debug code
+    console.log(this.dataSource);
+
+    this.table.renderRows();
   }
 
   onCancel() {
-
+    this.newFirstName = '';
+    this.newLastName = '';
+    this.newEmail = '';
   }
-  
+
 }

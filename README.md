@@ -27,3 +27,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 4. Restart server
 
 ### Task: Add mat components for Users Table
+
+1. NOTE: use to add record to table:
+
+```TypeScript
+@ViewChild(MatTable, { static: true }) table: MatTable<any>;
+...
+onSave() {
+    this.dataSource.push({
+      firstName: this.newFirstName,
+      lastName: this.newLastName,
+      email: this.newEmail
+    });
+
+    //debug code
+    console.log(this.dataSource);
+
+    this.table.renderRows();
+  }
+  ```
