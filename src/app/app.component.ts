@@ -1,5 +1,14 @@
-import { Component } from '@angular/core';
+export interface User {
+  firstName: string;
+  lastName: string;
+  email: string
+}
 
+const USER_DATA: User[] = [
+  {firstName:'geoff', lastName:'fox',  email:'geoff@computer.com'}
+]
+
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,9 +16,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TestFormAngularRev1';
-  firstName!: string;
-  lastName!: string;
-  email!:string;
+  newFirstName!: string;
+  newLastName!: string;
+  newEmail!:string;
+
+  // Mat Table properties
+
 
   constructor() {
 
@@ -20,6 +32,6 @@ export class AppComponent {
   }
 
   onCancel() {
-    
+
   }
 }
