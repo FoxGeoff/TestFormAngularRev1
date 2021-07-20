@@ -5,7 +5,8 @@ export interface User {
 }
 
 const USER_DATA: User[] = [
-  {firstName:'geoff', lastName:'fox',  email:'geoff@computer.com'}
+  { firstName: 'geoff', lastName: 'fox', email: 'geoff@computer.com' },
+  { firstName: 'joanna', lastName: 'fox', email: 'jo@computer.com' }
 ]
 
 import { Component } from '@angular/core';
@@ -18,10 +19,11 @@ export class AppComponent {
   title = 'TestFormAngularRev1';
   newFirstName!: string;
   newLastName!: string;
-  newEmail!:string;
+  newEmail!: string;
 
   // Mat Table properties
-
+  displayedColumns: string[] = ['firstName', 'lastName', 'email'];
+  dataSource = USER_DATA;
 
   constructor() {
 
@@ -34,4 +36,5 @@ export class AppComponent {
   onCancel() {
 
   }
+  
 }

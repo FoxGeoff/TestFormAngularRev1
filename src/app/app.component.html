@@ -1,6 +1,6 @@
 <div class="container" style="margin: 16px">
   <h4>User Form</h4>
-  <div class="example-form">
+  <div class="form">
     <!-- user form -->
     <mat-form-field appearance="standard">
       <mat-label>First Name</mat-label>
@@ -25,21 +25,33 @@
       Cancel
     </button>
   </div>
-
-  <!-- table of all users -->
+</div>
+<div class="container" style="margin: 16px">
   <h4>List of user details</h4>
-  <table>
-    <tr>
-      <th><input type="checkbox" /></th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>E-mail</th>
-    </tr>
-    <tr>
-      <th><input type="checkbox" /></th>
-      <td>Joe</td>
-      <td>Blow</td>
-      <td>joe@computer.com</td>
-    </tr>
+  <!-- table of all users -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- firstName Column -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef>First Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+    </ng-container>
+
+    <!-- lastName Column -->
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef>Last Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+    </ng-container>
+
+    <!-- email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 </div>
