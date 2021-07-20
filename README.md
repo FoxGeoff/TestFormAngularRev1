@@ -29,6 +29,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Task: Add mat components for Users Table
 
 1. NOTE: use to add record to table:
+2. Reference Code <https://github.com/FoxGeoff/material-table-inline-ops>
 
 ```TypeScript
 @ViewChild(MatTable, { static: true }) table: MatTable<any>;
