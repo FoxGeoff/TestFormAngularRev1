@@ -47,3 +47,9 @@ onSave() {
     this.table.renderRows();
   }
   ```
+
+### Task: Setup two components as parent and child
+
+1. Parent - Dashboard - User form to add a new user
+2. Child - UsersTable - Users table to list all users
+3. app.component - Aggregates Dashboard(form to add user) and UsersTable components.
