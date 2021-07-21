@@ -53,3 +53,5 @@ onSave() {
 1. Parent - Dashboard - User form to add a new user
 2. Child - UsersTable - Users table to list all users
 3. app.component - Aggregates Dashboard(form to add user) and UsersTable components.
+
+4. Ref video for debuging ANgular <https://app.pluralsight.com/library/courses/play-by-play-angular-design-solutions/table-of-contents>
