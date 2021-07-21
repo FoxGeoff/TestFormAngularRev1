@@ -55,3 +55,7 @@ onSave() {
 3. app.component - Aggregates Dashboard(form to add user) and UsersTable components.
 
 4. Ref video for debuging ANgular <https://app.pluralsight.com/library/courses/play-by-play-angular-design-solutions/table-of-contents>
+
+### Task: Add  ```@Output() userCreated = new EventEmitter<{firstName: string lastName: string, email: string }>();```
+
+1. ```<app-dashboard (userCreated)="onUserAdded($event)"></app-dashboard>```

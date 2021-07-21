@@ -1,1 +1,28 @@
 <p>dashboard works!</p>
+
+<!-- user form -->
+<h4>User Form</h4>
+<div class="form">
+  <mat-form-field appearance="standard">
+    <mat-label>First Name</mat-label>
+    <input matInput [(ngModel)]="newFirstName" name="firstName" />
+  </mat-form-field>
+</div>
+<div>
+  <mat-form-field appearance="standard">
+    <mat-label>Last Name</mat-label>
+    <input matInput [(ngModel)]="newLastName" name="lastName" />
+  </mat-form-field>
+</div>
+<div>
+  <mat-form-field appearance="standard">
+    <mat-label>E-Mail</mat-label>
+    <input matInput type="email" [(ngModel)]="newEmail" name="email" />
+  </mat-form-field>
+</div>
+<div class="row" fxLayoutGap="10px" fxLayoutAlign="start">
+  <button mat-raised-button color="accent" (click)="onAddUser()">Save</button>
+  <button mat-raised-button color="primary" (click)="onCancel()">
+    Cancel
+  </button>
+</div>

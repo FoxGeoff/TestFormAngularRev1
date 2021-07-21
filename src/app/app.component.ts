@@ -1,16 +1,6 @@
-export interface User {
-  firstName: string;
-  lastName: string;
-  email: string
-}
-
-const USER_DATA: User[] = [
-  { firstName: 'geoff', lastName: 'fox', email: 'geoff@computer.com' },
-  { firstName: 'joanna', lastName: 'fox', email: 'jo@computer.com' }
-]
-
 import { Component, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
+import { User } from './users-table/users-table.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,34 +8,17 @@ import { MatTable } from '@angular/material/table';
 })
 export class AppComponent {
   title = 'TestFormAngularRev1';
-  newFirstName!: string;
-  newLastName!: string;
-  newEmail!: string;
-
-  // Mat Table properties
-  displayedColumns: string[] = ['firstName', 'lastName', 'email'];
-  dataSource = USER_DATA;
-  @ViewChild(MatTable, { static: true }) table: MatTable<any>;
+  dataSource: User[] = [];
 
   constructor() { }
 
-  onSave() {
+  onUserAdded(dataSource: { firstName: string, lastName: string, email: string }) {
     this.dataSource.push({
-      firstName: this.newFirstName,
-      lastName: this.newLastName,
-      email: this.newEmail
+      firstName: dataSource.firstName,
+      lastName: dataSource.lastName,
+      email: dataSource.email
     });
-
     //debug code
     console.log(this.dataSource);
-
-    this.table.renderRows();
   }
-
-  onCancel() {
-    this.newFirstName = '';
-    this.newLastName = '';
-    this.newEmail = '';
-  }
-
 }

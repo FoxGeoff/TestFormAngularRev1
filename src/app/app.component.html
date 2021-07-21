@@ -1,57 +1,6 @@
 <div class="container" style="margin: 16px">
-  <h4>User Form</h4>
-  <div class="form">
-    <!-- user form -->
-    <mat-form-field appearance="standard">
-      <mat-label>First Name</mat-label>
-      <input matInput [(ngModel)]="newFirstName" name="firstName" />
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="standard">
-      <mat-label>Last Name</mat-label>
-      <input matInput [(ngModel)]="newLastName" name="lastName" />
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="standard">
-      <mat-label>E-Mail</mat-label>
-      <input matInput type="email" [(ngModel)]="newEmail" name="email" />
-    </mat-form-field>
-  </div>
-  <div class="row" fxLayoutGap="10px" fxLayoutAlign="start">
-    <button mat-raised-button color="accent" (click)="onSave()">Save</button>
-    <button mat-raised-button color="primary" (click)="onCancel()">
-      Cancel
-    </button>
-  </div>
-</div>
-<div class="container" style="margin: 16px">
-  <h4>List of user details</h4>
-  <!-- table of all users -->
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-    <!-- firstName Column -->
-    <ng-container matColumnDef="firstName">
-      <th mat-header-cell *matHeaderCellDef>First Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
-    </ng-container>
-
-    <!-- lastName Column -->
-    <ng-container matColumnDef="lastName">
-      <th mat-header-cell *matHeaderCellDef>Last Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
-    </ng-container>
-
-    <!-- email Column -->
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef>Email</th>
-      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
+  <!-- New user form  -->
+  <app-dashboard (userCreated)="onUserAdded($event)"></app-dashboard>
+  <!--  User table -->
+  <app-users-table></app-users-table>
 </div>
