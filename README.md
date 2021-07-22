@@ -61,3 +61,16 @@ onSave() {
 1. ```<app-dashboard (userCreated)="onUserAdded($event)"></app-dashboard>```
 
 ### Task: Add ```@Input() userData!: User[];```
+
+### Task: TODO **IMPORTANT**
+
+```typescript
+// TODO use async code FIX REQUIRED!!! on user-table.component
+function addTableRow(user: User) {
+  // debug code
+  console.log(`addTableRow(): `, user)
+
+  this.dataSource.push(user.firstName, user.lastName, user.email);
+  this.table.renderRows();
+}
+```
