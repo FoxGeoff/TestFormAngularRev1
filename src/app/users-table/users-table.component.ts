@@ -13,29 +13,21 @@ import { MatTable } from '@angular/material/table';
   styleUrls: ['./users-table.component.css']
 })
 export class UsersTableComponent implements OnInit, AfterViewInit {
-  @Input() userData!: User[];
+  @Input('userData') dataSource!: User[];
 
   // Mat Table properties
   displayedColumns: string[] = ['firstName', 'lastName', 'email'];
-  dataSource = this.userData;
   @ViewChild(MatTable, { static: true }) table: MatTable<any>;
 
   constructor() {
-    console.log(`constructor(), UsersTableComponent `, this.userData);
-
+    // console.log(`constructor(), UsersTableComponent `, this.dataSource);
   }
 
   ngOnInit(): void {
-    console.log(`ngOnInit(), UsersTableComponent `, this.userData);
   }
-
-
 
   ngAfterViewInit(): void {
-    console.log(`ngAfterViewInit(), UsersTableComponent `, this.userData);
-    this.dataSource = this.userData;
+    // this.table.renderRows();
   }
-
-
 
 }
