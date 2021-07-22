@@ -4,12 +4,7 @@ export interface User {
   email: string
 }
 
-const USER_DATA: User[] = [
-  { firstName: 'geoff', lastName: 'fox', email: 'geoff@computer.com' },
-  { firstName: 'joanna', lastName: 'fox', email: 'jo@computer.com' }
-]
-
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 
 @Component({
@@ -17,15 +12,30 @@ import { MatTable } from '@angular/material/table';
   templateUrl: './users-table.component.html',
   styleUrls: ['./users-table.component.css']
 })
-export class UsersTableComponent implements OnInit {
+export class UsersTableComponent implements OnInit, AfterViewInit {
+  @Input() userData!: User[];
+
   // Mat Table properties
   displayedColumns: string[] = ['firstName', 'lastName', 'email'];
-  dataSource = USER_DATA;
+  dataSource = this.userData;
   @ViewChild(MatTable, { static: true }) table: MatTable<any>;
 
-  constructor() { }
+  constructor() {
+    console.log(`constructor(), UsersTableComponent `, this.userData);
+
+  }
 
   ngOnInit(): void {
+    console.log(`ngOnInit(), UsersTableComponent `, this.userData);
   }
+
+
+
+  ngAfterViewInit(): void {
+    console.log(`ngAfterViewInit(), UsersTableComponent `, this.userData);
+    this.dataSource = this.userData;
+  }
+
+
 
 }

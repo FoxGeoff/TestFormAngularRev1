@@ -59,3 +59,5 @@ onSave() {
 ### Task: Add  ```@Output() userCreated = new EventEmitter<{firstName: string lastName: string, email: string }>();```
 
 1. ```<app-dashboard (userCreated)="onUserAdded($event)"></app-dashboard>```
+
+### Task: Add ```@Input() userData!: User[];```

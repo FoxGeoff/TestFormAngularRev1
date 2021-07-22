@@ -2,5 +2,5 @@
   <!-- New user form  -->
   <app-dashboard (userCreated)="onUserAdded($event)"></app-dashboard>
   <!--  User table -->
-  <app-users-table></app-users-table>
+  <app-users-table [userData]='userList'></app-users-table>
 </div>
